@@ -36,15 +36,32 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
+nav {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 nav a {
-  color: var(--bg);
-  background-color: var(--accent);
   text-decoration: none;
+  background: var(--accent);
+  color: var(--bg);
   padding: 0.6rem 1rem;
   border-radius: 5px;
-  margin: 0 0.3rem;
   font-weight: bold;
   transition: background 0.3s;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 120px;
+}
+
+@media (max-width: 500px) {
+  nav a {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 nav a:hover {
@@ -117,4 +134,25 @@ footer {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.item {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  color: var(--item-name);
+}
+
+.item p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+}
+
+.item p:last-child {
+  color: var(--price);
+  font-weight: bold;
 }
