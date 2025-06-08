@@ -1,26 +1,273 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raciones · Boulevard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-  <style></style>
-  <header>
+<style>
+:root {
+  --bg: #302222;
+  --text: #f5f5f5;
+  --accent: #3ca77a;
+  --title: #388a5d;
+  --section-title: #8aff94;
+  --item-name: #90e0b7;
+  --price: #dddddd;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: var(--bg);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+header h1 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--title);
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 120px;
+}
+
+@media (max-width: 500px) {
+  nav a {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .hero h1{
+    font-size: 2rem;
+  }
+  .hero-subtitle{
+    font-size: 1rem;
+  }
+  .hero > div {
+    padding: 0.8rem 1rem;
+  }
+}
+
+nav a:hover {
+  background: #2b7e5b;
+}
+
+main {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contacto-grid h1 {
+  margin: 0;
+  margin-bottom: 2%;
+  font-size: 1.6rem;
+  color: var(--section-title);
+}
+
+.contacto-grid h3, h4 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--price);
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: var(--section-title);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #89a556;
+  padding-bottom: 0.4rem;
+  margin-top: 30px;
+}
+
+.menu-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 130%;
+  max-width: 100%;
+
+}
+
+.menu-gallery {
+width:70px;
+  margin-top:3.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width:100px;
+  flex-shrink:0;
+  align-self:flex-start;
+  position:sticky;
+  top:6rem;
+  height:fit-content;
+  max-height:90vh;
+  overflow-y:auto;
+  justify-content:space-between;
+  scrollbar-width: none;
+}
+
+.menu-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.menu-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.menu-gallery.right, 
+.menu-gallery.left{
+  align-self:stretch;
+}
+
+.menu-gallery.left {
+  margin-right: 1rem;
+  margin-top: 3.5rem;
+}
+
+.menu-gallery.right {
+  margin-left: 1rem;
+  margin-top: 3.5rem;
+}
+
+
+.menu-section {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 400px) {
+  .menu-gallery left {
+   margin-right:0.5rem;
+  }
+  .menu-gallery right {
+   margin-left:0.5rem;
+  }
+
+  .menu-gallery img{
+    max-width:70px;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "• ";
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #201414;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.03);
+}
+
+
+.item {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  color: var(--item-name);
+}
+
+.item p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+}
+
+.item p:last-child {
+  color: var(--price);
+  font-weight: bold;
+}
+</style>
+<header>
     <h1><i>CARTA BOULEVARD</i></h1>
     <br>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="carta.html">Raciones</a>
-      <a href="desayunos.html">Desayunos</a>
-      <a href="bebidas.html">Bebidas</a>
+        <a href="index.html">Inicio</a>
+        <a href="carta.html">Raciones</a>
+        <a href="desayunos.html">Desayunos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="menudeldia.html">Menú del día</a>
     </nav>
   </header>
 
-  <section class="menu-section">
+  <section class="menu-layout">
+    <div class="menu-gallery left">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones1.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones2.jpg." alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones3.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones4.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones5.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones6.jpg" alt="Raciones 1">
+    </div>
+
+  <div class="menu-section">
     <h2>De la tierra</h2>
     <div class="item">
       <h3>Ensalada de tomate aliñado</h3>
@@ -47,7 +294,7 @@
       <p>9,00 €</p>
     </div>
 
-    <h2>Nuestros arroces (mínimo 2 personas)</h2>
+<h2>Nuestros arroces (mínimo 2 personas)</h2>
     <div class="item">
       <h3>De wok de verduras</h3>
       <p>21,00 € -> Por persona</p>
@@ -154,6 +401,13 @@
       <h3>Torrija casera de la abuela</h3>
       <p>6,00 €</p>
     </div>
+</div>
+    <div class="menu-gallery right">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones7.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones8.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones9.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones10.jpg" alt="Raciones 1">
+      <img src="https://boulevard-restaurante.com/wp-content/uploads/2025/06/raciones11.jpg" alt="Raciones 1">
+    </div>
   </section>
 </body>
-</html>

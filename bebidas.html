@@ -1,13 +1,171 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bebidas · Boulevard</title>
-  <link rel="stylesheet" href="estilo.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
-</head>
-<body>
+<style>
+:root {
+  --bg: #302222;
+  --text: #f5f5f5;
+  --accent: #3ca77a;
+  --title: #388a5d;
+  --section-title: #8aff94;
+  --item-name: #90e0b7;
+  --price: #dddddd;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: var(--bg);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+header h1 {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: var(--title);
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 120px;
+}
+
+@media (max-width: 500px) {
+  nav a {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+nav a:hover {
+  background: #2b7e5b;
+}
+
+main {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: var(--section-title);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #89a556;
+  padding-bottom: 0.4rem;
+  margin-top: 30px;
+}
+
+.menu-section h2{
+  font-size: 1.5rem;
+  color: var(--section-title);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #89a556;
+  padding-bottom: 0.4rem;
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "• ";
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #201414;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.03);
+}
+
+
+.item {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  color: var(--item-name);
+}
+
+.item p {
+  color:white;
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+}
+
+.item p:last-child {
+  color: var(--price);
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--section-title);
+  text-shadow: 2px 2px 6px #000;
+  font-family: var(--font-title);
+  padding: 0 1rem;
+}
+
+</style>
+
+ <body>
   <header>
     <h1><i>CARTA BOULEVARD</i></h1>
     <br>
@@ -16,10 +174,11 @@
       <a href="carta.html">Raciones</a>
       <a href="desayunos.html">Desayunos</a>
       <a href="bebidas.html">Bebidas</a>
+      <a href="menudeldia.html">Menú del día</a>
     </nav>
   </header>
 
-  <section class="menu-section">
+<section class="menu-section">
     <h2>Cervezas</h2>
     <div class="item">
       <h3>Mahou de barril (Normal, 0,0 Tostada, con Limón o con Casera)</h3>
@@ -88,7 +247,7 @@
 
     <h2>Vinos tintos</h2>
     <div class="item">
-      <h3>RIOJA</h3>
+      <h3><u>RIOJA</u></h3>
       <div class="item">
         <h3>Montelciego (Copa)</h3>
         <p>3,30 €</p>
@@ -99,7 +258,7 @@
       </div>
     </div>
     <div class="item">
-      <h3>RIBERA</h3>
+      <h3><u>RIBERA</u></h3>
       <div class="item">
         <h3>Señorío Real (Copa)</h3>
         <p>3,30 €</p>
@@ -227,4 +386,3 @@
     </div>
   </section>
 </body>
-</html>
